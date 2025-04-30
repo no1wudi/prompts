@@ -77,6 +77,24 @@ int  x;      /* Variable x. */
 int  y;      /* Variable y. */
 long value;  /* Long value. */
 ```
+- **Blank Lines After Comments**: Always add a blank line after any comment line or comment block
+```c
+/*
+ * This is a comment block, blank line is required after it.
+ * This is the second line of the comment block.
+ */
+
+int some_variable;
+
+/* Single line comment */
+
+if (condition)
+  {
+    /* Comment inside a block. */
+
+    dosomething();
+  }
+```
 
 ## Braces
 - **Always on Separate Lines**: Braces appear alone on their lines
@@ -93,6 +111,49 @@ else
 - **Indentation**:
   - Statements indented +2 spaces from the containing block
   - Opening brace at same indentation as control statement
+- **Blank Line After Closing Braces**:
+  - Insert blank line after closing braces, except for if-else constructs
+```c
+/* With blank line after block */
+
+while (condition)
+  {
+    dosomething();
+  }
+
+nextstatement();
+
+/* Exception for if-else, no blank line needed */
+
+if (condition)
+  {
+    dosomething();
+  }
+else
+  {
+    dosomethingelse();
+  }
+
+/* For nested if-else, maintain structure */
+
+if (condition1)
+  {
+    if (condition2)
+      {
+        dosomething();
+      }
+    else
+      {
+        dosomethingelse();
+      }
+  }
+else
+  {
+    doanotheraction();
+  }
+
+nextstatement();
+```
 - **Exception**: Structure/enum definitions align braces with the type name
 ```c
 struct example_s
