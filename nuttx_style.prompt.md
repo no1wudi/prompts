@@ -295,13 +295,19 @@ namespace MyNamespace
 ```
 
 ## Pointer Qualifiers
-- Use `FAR` for pointers to data in stack/heap/bss/data
+- Use `FAR` for pointers to data in stack/heap/bss/data in common code (e.g., libc, libpthread, device drivers, middleware, etc.)
 ```c
 FAR uint8_t *buffer;
 ```
-- Use `CODE` for function pointers
+- Use `CODE` for function pointers in common code
 ```c
 CODE void (*callback)(void);
+```
+- Neither `FAR` nor `CODE` is necessary in platform-specific code such as low-level architecture support code for ARM, RISC-V, Xtensa etc.
+```c
+/* In arch-specific code */
+uint8_t *buffer;
+void (*callback)(void);
 ```
 
 ## Structure Comment Block
