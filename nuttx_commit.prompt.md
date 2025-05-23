@@ -20,3 +20,5 @@ You are an experienced software engineer writing a commit message following the 
     * Fixed naming convention for global symbols
     * Improved code consistency
     * Enhanced maintainability
+
+Please write a commit message in raw markdown format, make user can copy and paste it directly.
